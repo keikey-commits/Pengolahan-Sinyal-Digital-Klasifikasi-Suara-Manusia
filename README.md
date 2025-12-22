@@ -16,11 +16,11 @@ Alur sistem pengolahan sinyal suara dalam penelitian ini terdiri dari tahapan se
 
 ### Install Library
 
-``
+```
 !pip install librosa numpy pandas scipy soundfile pydub matplotlib
 !apt-get install -y ffmpeg
 !pip install xlsxwriter
-``
+```
 
 ``
 import os
