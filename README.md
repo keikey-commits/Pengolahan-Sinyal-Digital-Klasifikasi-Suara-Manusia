@@ -15,13 +15,14 @@ Proyek UAS Pengolahan Sinyal Digital Semester 3 Sains Data Unesa
 Alur sistem pengolahan sinyal suara dalam penelitian ini terdiri dari tahapan sebagai berikut:
 
 ### Install Library
-`` bash
+
+``
 !pip install librosa numpy pandas scipy soundfile pydub matplotlib
 !apt-get install -y ffmpeg
 !pip install xlsxwriter
 ``
 
-`` bash
+``
 import os
 import numpy as np
 import matplotlib.pyplot as plt
