@@ -22,7 +22,7 @@ Alur sistem pengolahan sinyal suara dalam penelitian ini terdiri dari tahapan se
 !pip install xlsxwriter
 ```
 
-```
+``` bash
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -40,7 +40,7 @@ Tahap pertama awal dalam penelitian ini adalah memuat data suara dari berkas aud
 
 2. Pra-pemrosesan sinyal
 
-```
+``` bash
 # Bandpass Filter(75-400 Hz)
 def bandpass_filter(sinyal, sr, f_low=75, f_high=400):
     nyquist = 0.5 * sr
@@ -50,9 +50,7 @@ def bandpass_filter(sinyal, sr, f_low=75, f_high=400):
         btype='band'
     )
     return scipy.signal.filtfilt(b, a, sinyal)
-```
 
-```
 # Menghitung panjang FFT sebagai pangkat dua terdekat agar efisien secara komputasi.
 def next_power_of_two(n):
     return 1 << (n - 1).bit_length() if n > 0 else 1
@@ -65,7 +63,7 @@ Pra-pemrosesan yang dilakukan meliputi:
 
 3. Transformasi domain waktu ke domain frekuensi menggunakan FFT 
 
-```
+``` bash
 def ekstraksi_fitur_fft(sinyal, sr):
     n_fft_min = 4096
     n_fft = max(n_fft_min, next_power_of_two(len(sinyal)))
@@ -91,7 +89,7 @@ Setelah melalui pra-pemrosesan, sinyal suara ditransformasikan dari domain waktu
 
 4. Ekstraksi fitur spektral
 
-```
+``` bash
     # Spectral centroid
     if np.sum(magnitude) > 0:
         centroid = np.sum(frekuensi * magnitude) / np.sum(magnitude)
@@ -120,7 +118,7 @@ Dari hasil transformasi FFT, dilakukan ekstraksi fitur spektral utama yang digun
 
 5. Pengelompokkan suara berbasis aturan frekuensi 
 
-```
+``` bash
 def klasifikasi_suara(f0):
     if f0 < 50:
         return "Noise / Hening"
@@ -158,7 +156,7 @@ Pengelompokan suara dilakukan menggunakan pendekatan berbasis aturan dengan memb
 6. Visualisasi dan penyimpanan hasil analisis
 
 Waveform
-```
+``` bash
     librosa.display.waveshow(sinyal_asli, sr=sr, alpha=0.5, label="Asli")
     librosa.display.waveshow(sinyal_bersih, sr=sr, alpha=0.8, label="Bersih")
     plt.title("Waveform Sinyal Suara")
@@ -167,7 +165,7 @@ Waveform
 ```
 
 FFT Spectrum
-```
+``` bash
     plt.subplot(3, 1, 2)
     plt.plot(fitur["Frekuensi"], fitur["Magnitude"])
     plt.axvline(fitur["F0"], color='r', linestyle='--', label=f'F0 = {fitur["F0"]:.1f} Hz')
@@ -180,7 +178,7 @@ FFT Spectrum
 ```
 
 Spectrogram
-```
+``` bash
     plt.subplot(3, 1, 3)
     S = librosa.stft(sinyal_bersih, n_fft=1024)
     S_db = librosa.amplitude_to_db(np.abs(S), ref=np.max)
