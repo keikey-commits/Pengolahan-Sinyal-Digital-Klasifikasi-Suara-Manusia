@@ -121,6 +121,13 @@ Dari hasil transformasi FFT, dilakukan ekstraksi fitur spektral utama yang digun
 
 5. Pengelompokkan suara berbasis aturan frekuensi 
 
+sumber aturan frekuensi:
+   sumber 1: https://www.researchgate.net/publication/367729375_Application_Development_of_Male_and_Female_Voice_Differentiation_Based_on_Gender_Age_Range_Frequency_Class_Based_on_FFT_and_K-Means/fulltext/63da89c2c465a873a277248b/Application-Development-of-Male-and-Female-Voice-Differentiation-Based-on-Gender-Age-Range-Frequency-Class-Based-on-FFT-and-K-Means.pdf?origin=publication_detail&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoicHVibGljYXRpb25Eb3dubG9hZCIsInByZXZpb3VzUGFnZSI6InB1YmxpY2F0aW9uIn19&__cf_chl_tk=tRB.9NHGeBYSjywzr2L8Zd67jZRmP8kMPhOCq9Jijkw-1764291620-1.0.1.1-dAMOwSVnmeJRmQYVIEBPTdbA1wGgGS9aWJP4nY50JAY
+
+   sumber 2: https://media.neliti.com/media/publications/186539-ID-analisis-spektrum-suara-manusia-berdasar.pdf
+
+   sumber 3: https://jurnal.upnyk.ac.id/index.php/telematika/article/view/12325
+
 ``` bash
 def klasifikasi_suara(f0):
     if f0 < 50:
@@ -191,7 +198,3 @@ Spectrogram
     plt.tight_layout()
     plt.show()
 ```
-
-   sumber 1: https://www.researchgate.net/publication/367729375_Application_Development_of_Male_and_Female_Voice_Differentiation_Based_on_Gender_Age_Range_Frequency_Class_Based_on_FFT_and_K-Means/fulltext/63da89c2c465a873a277248b/Application-Development-of-Male-and-Female-Voice-Differentiation-Based-on-Gender-Age-Range-Frequency-Class-Based-on-FFT-and-K-Means.pdf?origin=publication_detail&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoicHVibGljYXRpb25Eb3dubG9hZCIsInByZXZpb3VzUGFnZSI6InB1YmxpY2F0aW9uIn19&__cf_chl_tk=tRB.9NHGeBYSjywzr2L8Zd67jZRmP8kMPhOCq9Jijkw-1764291620-1.0.1.1-dAMOwSVnmeJRmQYVIEBPTdbA1wGgGS9aWJP4nY50JAY
-
-   sumber 2: https://media.neliti.com/media/publications/186539-ID-analisis-spektrum-suara-manusia-berdasar.pdf
