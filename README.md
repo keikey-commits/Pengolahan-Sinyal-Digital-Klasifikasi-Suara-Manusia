@@ -35,7 +35,10 @@ import warnings
 ```
 
 1. Load sinyal suara
-   
+
+```
+!gdown --folder "https://drive.google.com/drive/folders/1Z4ijYI6ATbnAhUOJGUnxMeB6U8snR2GL"
+```
 Tahap pertama awal dalam penelitian ini adalah memuat data suara dari berkas audio. Data suara yang digunakan merupakan sinyal suara manusia yang direkam dalam format     .wav. Pada tahap ini, sinyal suara masih di domain waktu belum mengalami proses pengolahan apa pun.
 
 2. Pra-pemrosesan sinyal
